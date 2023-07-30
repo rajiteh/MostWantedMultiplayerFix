@@ -6,17 +6,23 @@ This fix may also work on other Need For Speed games as long as the process name
 
 ## How To
 
-- Download the DLL and EXE from the [Releases](https://github.com/rajiteh/MostWantedMultiplayerFix/releases/) tab.
-- Alternatively, you can clone and build the project.
-- Copy the files to your Most Wanted 2005 installation, where speed.exe exists.
-- There are few ways to apply the fix.
-  - Run `MostWantedMultiplayerFixLauncher.exe` to launch the game with fix injected.
-  - If the game is already running, you can simply open the exe and it will attach itself to the game.
-  - Use a DLL injector (like SpecialK Custom Plugin feature) to inject the `MostWantedMultiplayerFix.dll` to the game process.
- 
-## TODO
+- Download the files from the [Releases](https://github.com/rajiteh/MostWantedMultiplayerFix/releases/) tab.
+- Alternatively, you can clone and build the project (Note: The `.asi` file is simply the `.dll` renamed, there is no other change).
 
-- [ ] Figure out a way to apply the fix without DLL injection (DLL proxying?)
+### ASI Loader
+
+Most NFSMW Repacks are pre-packaged with an ASI Loader/Plugin Injector. You can check by looking at the presence of a `scripts/` folder with a bunch of  `.asi` files in them. Download the `MostWantedMultiplayerFix.asi` to the `scripts/` folder in your game directory and the plugin will be loaded automatically.
+
+### DLL Injector
+
+If your game already uses a DLL injector like Special K Custom Plugin or you have your own preferred mechanism to do so, you may simply download the `MostWantedMultiplayerFix.dll` file and ensure that it gets injected to the process.
+
+### Standalone Launcher
+
+This method requires no additional plugin frameworks, simply copy the files `MostWantedMultiplayerFix.exe` and `MostWantedMultiplayerFix.dll` to the game directory where `speed.exe` is. Run the executable and it will launch the game, or if the game is already running it will attempt to inject itself to the running process.
+
+NOTE: Antivirus software may flag the binary as malicious as it is performing a DLL injection.  
+
  
  
 
